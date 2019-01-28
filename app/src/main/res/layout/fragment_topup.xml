@@ -1,0 +1,440 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.ionicframework.KiooskSharj.TopupFragment">
+
+    <fr.castorflex.android.smoothprogressbar.SmoothProgressBar
+        android:id="@+id/pb_topup"
+        style="@style/GNowProgressBar"
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+    <ScrollView
+        android:id="@+id/sv_topup"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBackgroundLight"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10sp"
+                    android:layout_weight="1"
+                    android:paddingStart="10sp"
+                    android:text="@string/phone_number"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/phone_number_topup"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10sp"
+                    android:layout_marginEnd="0sp"
+                    android:layout_marginStart="10sp"
+                    android:layout_marginTop="10sp"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="@string/_09xxxxxxxxx"
+                    android:inputType="phone"
+                    android:padding="10sp"
+                    android:textDirection="ltr"
+                    android:theme="@style/CustomEditText" />
+
+                <net.steamcrafted.materialiconlib.MaterialIconView
+                    android:id="@+id/btn_search_topup"
+                    android:layout_width="40sp"
+                    android:layout_height="40sp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="-5sp"
+                    android:layout_marginTop="5sp"
+                    app:materialIcon="account_search"
+                    app:materialIconColor="@color/colorButtonPrimary"
+                    android:contentDescription="@string/select_number_from_cantacts" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10sp"
+                    android:layout_weight="1"
+                    android:paddingStart="10sp"
+                    android:text="@string/charge_amount"
+                    android:textSize="16sp" />
+
+                <Spinner
+                    android:id="@+id/charge_amount"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10sp"
+                    android:layout_weight="1"
+                    android:padding="10sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10sp"
+                    android:layout_weight="1"
+                    android:paddingStart="10sp"
+                    android:text="@string/awesome_charge"
+                    android:textSize="16sp" />
+
+                <Switch
+                    android:id="@+id/awesome_charge_switch"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10sp"
+                    android:layout_weight="1"
+                    android:padding="10sp" />
+
+            </LinearLayout>
+
+            <include layout="@layout/horizontal_divider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="5sp"
+                    android:text="@string/payment_method"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/fab_payment_method_hint"
+                    android:layout_width="24sp"
+                    android:layout_height="24sp"
+                    android:layout_margin="5sp"
+                    android:scaleType="center"
+                    app:backgroundTint="@color/colorButtonPrimary"
+                    app:borderWidth="0dp"
+                    app:fabSize="mini" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10sp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layoutDirection="rtl"
+                    android:padding="10sp">
+
+                    <net.steamcrafted.materialiconlib.MaterialIconView
+                        android:layout_width="45sp"
+                        android:layout_height="45sp"
+                        app:materialIcon="wifi_off"
+                        app:materialIconColor="@color/colorBlueGrey"/>
+
+                    <RadioButton
+                        android:id="@+id/rb_pay_offline"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5sp"
+                        android:layout_weight="0.95"
+                        android:layoutDirection="ltr"
+                        android:padding="10sp"
+                        android:text="@string/offline"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layoutDirection="rtl"
+                    android:padding="10sp">
+
+                    <net.steamcrafted.materialiconlib.MaterialIconView
+                        android:layout_width="45sp"
+                        android:layout_height="45sp"
+                        app:materialIcon="wifi"
+                        app:materialIconColor="@color/colorBlueGrey"/>
+
+                    <RadioButton
+                        android:id="@+id/rb_pay_online"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5sp"
+                        android:layout_weight="0.95"
+                        android:checked="true"
+                        android:layoutDirection="ltr"
+                        android:padding="10sp"
+                        android:text="@string/online"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/topup_last_divider"
+                android:layout_width="match_parent"
+                android:layout_height="1sp"
+                android:layout_marginEnd="20sp"
+                android:layout_marginStart="20sp"
+                android:background="@android:color/darker_gray"
+                tools:ignore="SmallSp" />
+
+            <net.cachapa.expandablelayout.ExpandableLayout
+                android:id="@+id/gateways_topup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:el_duration="1000"
+                app:el_expanded="true"
+                app:el_parallax="0.5">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="5sp"
+                    android:text="@string/payment_gateway"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10sp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layoutDirection="rtl"
+                        android:padding="10sp">
+
+                        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="45sp"
+                            android:layout_height="45sp"
+                            android:src="@drawable/saman" />
+
+                        <RadioButton
+                            android:id="@+id/saman_gateway"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.95"
+                            android:checked="true"
+                            android:layoutDirection="ltr"
+                            android:text="@string/saman_gateway"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layoutDirection="rtl"
+                        android:padding="10sp">
+
+                        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="45sp"
+                            android:layout_height="45sp"
+                            android:src="@drawable/mellat" />
+
+                        <RadioButton
+                            android:id="@+id/mellat_gateway"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.95"
+                            android:layoutDirection="ltr"
+                            android:padding="10sp"
+                            android:text="@string/mellat_gateway"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layoutDirection="rtl"
+                        android:padding="10sp">
+
+                        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="45sp"
+                            android:layout_height="45sp"
+                            android:src="@drawable/zarinpal" />
+
+                        <RadioButton
+                            android:id="@+id/zarrinpal_gateway"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.95"
+                            android:layoutDirection="ltr"
+                            android:padding="10sp"
+                            android:text="@string/zarinpal_gateway"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </net.cachapa.expandablelayout.ExpandableLayout>
+
+            <net.cachapa.expandablelayout.ExpandableLayout
+                android:id="@+id/creditcard_layout_topup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:el_duration="1000"
+                app:el_expanded="false"
+                app:el_parallax="0.5">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="5sp"
+                    android:text="@string/credit_card_number"
+                    android:textAlignment="center"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20sp"
+                    android:layout_marginTop="30sp"
+                    android:layoutDirection="ltr"
+                    android:padding="10sp"
+                    android:weightSum="4">
+
+                    <EditText
+                        android:id="@+id/et_credit1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5sp"
+                        android:layout_marginStart="5sp"
+                        android:layout_weight="1"
+                        android:ems="4"
+                        android:hint="@string/stars"
+                        android:inputType="number"
+                        android:maxEms="4"
+                        android:shadowColor="@color/colorBlueGrey"
+                        android:shadowDx="2"
+                        android:shadowDy="2"
+                        android:shadowRadius="2"
+                        android:textAlignment="center"
+                        android:textDirection="ltr"
+                        android:textStyle="bold"
+                        android:theme="@style/CustomEditText" />
+
+                    <EditText
+                        android:id="@+id/et_credit2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5sp"
+                        android:layout_marginStart="5sp"
+                        android:layout_weight="1"
+                        android:ems="4"
+                        android:hint="@string/stars"
+                        android:inputType="number"
+                        android:maxEms="4"
+                        android:shadowColor="@color/colorBlueGrey"
+                        android:shadowDx="2"
+                        android:shadowDy="2"
+                        android:shadowRadius="2"
+                        android:textAlignment="center"
+                        android:textDirection="ltr"
+                        android:textStyle="bold"
+                        android:theme="@style/CustomEditText" />
+
+                    <EditText
+                        android:id="@+id/et_credit3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5sp"
+                        android:layout_marginStart="5sp"
+                        android:layout_weight="1"
+                        android:ems="4"
+                        android:hint="@string/stars"
+                        android:inputType="number"
+                        android:maxEms="4"
+                        android:shadowColor="@color/colorBlueGrey"
+                        android:shadowDx="2"
+                        android:shadowDy="2"
+                        android:shadowRadius="2"
+                        android:textAlignment="center"
+                        android:textDirection="ltr"
+                        android:textStyle="bold"
+                        android:theme="@style/CustomEditText" />
+
+                    <EditText
+                        android:id="@+id/et_credit4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5sp"
+                        android:layout_marginStart="5sp"
+                        android:layout_weight="1"
+                        android:ems="4"
+                        android:hint="@string/stars"
+                        android:inputType="number"
+                        android:maxEms="4"
+                        android:shadowColor="@color/colorBlueGrey"
+                        android:shadowDx="2"
+                        android:shadowDy="2"
+                        android:shadowRadius="2"
+                        android:textAlignment="center"
+                        android:textDirection="ltr"
+                        android:textStyle="bold"
+                        android:theme="@style/CustomEditText" />
+                </LinearLayout>
+
+            </net.cachapa.expandablelayout.ExpandableLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/buy_topup_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="20sp"
+                    android:background="@drawable/rounded_button"
+                    android:padding="10sp"
+                    android:text="@string/buy"
+                    android:textColor="@color/colorSecondaryText"
+                    android:textSize="28sp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

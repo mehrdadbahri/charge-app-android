@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:id="@+id/group_charge"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/item_charge"
+            android:title="@string/buy_sharj" />
+        <item
+            android:id="@+id/item_packages"
+            android:title="@string/irancel_internet_package" />
+        <item
+            android:id="@+id/item_giftcard"
+            android:title="@string/buy_giftcard" />
+        <!--<item-->
+            <!--android:id="@+id/item_pay_bill"-->
+            <!--android:title="@string/pay_bill" />-->
+    </group>
+
+    <group
+        android:id="@+id/group_other"
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/item_support"
+            android:title="@string/support" />
+        <item
+            android:id="@+id/item_comment"
+            android:title="@string/send_comment" />
+
+    </group>
+
+</menu>

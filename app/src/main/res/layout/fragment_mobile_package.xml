@@ -1,0 +1,203 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.ionicframework.KiooskSharj.MobilePackageFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3sp"
+            android:layout_marginEnd="6sp"
+            android:layout_marginStart="6sp"
+            android:layout_marginTop="6sp"
+            android:background="@color/colorWhite"
+            android:orientation="horizontal">
+
+            <net.steamcrafted.materialiconlib.MaterialIconView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10sp"
+                android:layout_marginTop="2dp"
+                app:materialIcon="filter_variant" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="5dp"
+                android:paddingTop="5sp"
+                android:text="@string/packages_filter"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+        <RadioGroup
+            android:id="@+id/rg_time_period"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:layout_marginBottom="3sp"
+            android:layout_marginTop="3sp"
+            android:checkedButton="@+id/rb_monthly"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_hourly"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="3sp"
+                android:layout_marginStart="6sp"
+                android:layout_weight="1"
+                android:background="@color/colorWhite"
+                android:text="ساعتی" />
+
+            <RadioButton
+                android:id="@+id/rb_daily"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="3sp"
+                android:layout_marginStart="3sp"
+                android:layout_weight="1"
+                android:background="@color/colorWhite"
+                android:text="روزانه" />
+
+            <RadioButton
+                android:id="@+id/rb_weekly"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="3sp"
+                android:layout_marginStart="3sp"
+                android:layout_weight="1"
+                android:background="@color/colorWhite"
+                android:text="هفتگی" />
+
+            <RadioButton
+                android:id="@id/rb_monthly"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="6sp"
+                android:layout_marginStart="3sp"
+                android:layout_weight="1"
+                android:background="@color/colorWhite"
+                android:text="ماهانه" />
+
+        </RadioGroup>
+
+
+        <RadioGroup
+            android:id="@+id/rg_customer_type"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:layout_marginBottom="3sp"
+            android:layout_marginTop="3sp"
+            android:checkedButton="@+id/rb_customer_prepaid"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@id/rb_customer_prepaid"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="3sp"
+                android:layout_marginStart="6sp"
+                android:layout_weight="1"
+                android:background="@color/colorWhite"
+                android:text="اعتباری" />
+
+            <RadioButton
+                android:id="@+id/rb_customer_postpaid"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="3sp"
+                android:layout_marginStart="3sp"
+                android:layout_weight="1"
+                android:background="@color/colorWhite"
+                android:text="دائمی" />
+
+            <RadioButton
+                android:id="@+id/rb_customer_td_lte"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="6sp"
+                android:layout_marginStart="3sp"
+                android:layout_weight="1"
+                android:background="@color/colorWhite"
+                android:text="اینترنت ثابت TDLTE" />
+
+        </RadioGroup>
+
+        <include layout="@layout/horizontal_divider" />
+
+        <com.ionicframework.KiooskSharj.ExpandableHeightGridView
+            android:id="@+id/grid_view_packages"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:columnWidth="200sp"
+            android:gravity="center"
+            android:horizontalSpacing="10sp"
+            android:numColumns="auto_fit"
+            android:padding="10sp"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="10sp" />
+
+        <LinearLayout
+            android:id="@+id/ll_error_getting_packages"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20sp"
+                android:gravity="center"
+                android:weightSum="5">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:text="@string/error_getting_package_data_from_server"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorDanger"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5sp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:padding="10sp">
+
+                <com.github.jorgecastilloprz.FABProgressCircle
+                    android:id="@+id/fabProgressCircle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:arcColor="@color/colorButtonPrimary">
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/refresh_packages_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5sp"
+                        app:borderWidth="0dp" />
+                </com.github.jorgecastilloprz.FABProgressCircle>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

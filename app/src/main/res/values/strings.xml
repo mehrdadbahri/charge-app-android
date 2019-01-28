@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">کیوسک شارژ</string>
+    <string name="phone_number">شماره موبایل</string>
+    <string name="charge_amount">مبلغ شارژ</string>
+    <string name="awesome_charge">شارژ شگفت انگیز</string>
+    <string name="payment_gateway">درگاه پرداخت</string>
+    <string name="saman_gateway">درگاه بانک سامان</string>
+    <string name="mellat_gateway">درگاه بانک ملت</string>
+    <string name="zarinpal_gateway">درگاه زرین پال</string>
+    <string name="buy">خرید</string>
+    <string name="navigation_drawer_open">بازکردن منو</string>
+    <string name="navigation_drawer_close">بستن منو</string>
+    <string name="operator">اپراتور</string>
+    <string name="irancel">ایرانسل</string>
+    <string name="hamrah_aval">همراه اول</string>
+    <string name="rightel">رایتل</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="online">آنلاین</string>
+    <string name="offline">آفلاین (بدون نیاز به اینترنت)</string>
+    <string name="payment_method">روش پرداخت</string>
+    <string name="stars">****</string>
+    <string name="credit_card_number">شماره کارت بانکی</string>
+    <string name="_09xxxxxxxxx">09xxxxxxxxx</string>
+    <string name="select_number_from_cantacts">انتخاب شماره از مخاطبین</string>
+    <string name="offline_payment_hint">خرید آفلاین فقط بر روی سیمکارت‌های ایرانسل و رایتل امکان پذیر می باشد. اگر سیمکارت گوشی شما ایرانسل و یا رایتل باشد می توانید از این گزینه استفاده کنید.</string>
+    <string name="error_getting_package_data_from_server">خطا در دریافت اطلاعات بسته ها از سرور</string>
+    <string name="try_again">تلاش مجدد</string>
+    <string name="packages_filter">تنظیمات نمایش بسته ها</string>
+    <string name="buy_sharj">خرید شارژ</string>
+    <string name="irancel_internet_package">بسته های اینترنتی ایرانسل</string>
+    <string name="buy_giftcard">خرید گیفت کارت</string>
+    <string name="send_comment">ارسال نظرات</string>
+    <string name="support">پشتیبانی</string>
+    <string name="pay_bill">پرداخت قبوض</string>
+</resources>

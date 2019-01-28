@@ -1,0 +1,254 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.ionicframework.KiooskSharj.GiftcardPurchaseFragment">
+
+    <fr.castorflex.android.smoothprogressbar.SmoothProgressBar
+        android:id="@+id/pb_topup"
+        style="@style/GNowProgressBar"
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="10sp">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cv_selected_giftcard_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/colorAccent"
+                app:cardCornerRadius="10sp"
+                app:cardElevation="5sp"
+                app:contentPaddingTop="3sp"
+                app:cardPreventCornerOverlap="false">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/rounded_corner_background_white"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/iv_selected_giftcard_logo"
+                                android:layout_width="80sp"
+                                android:layout_height="80sp" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="1sp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorBlueGrey" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/tv_selected_giftcard_detail"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingEnd="7sp"
+                                android:paddingStart="7sp"
+                                android:textAlignment="center"
+                                android:textColor="@color/cardview_dark_background"
+                                android:textSize="18sp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10sp">
+
+                        <TextView
+                            android:id="@+id/tv_selected_giftcard_price"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5sp"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorButtonPrimary"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10sp"
+                    android:layout_weight="1"
+                    android:paddingStart="10sp"
+                    android:text="@string/phone_number"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/phone_number_selected_giftcard"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10sp"
+                    android:layout_marginEnd="0sp"
+                    android:layout_marginStart="10sp"
+                    android:layout_marginTop="10sp"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="@string/_09xxxxxxxxx"
+                    android:inputType="phone"
+                    android:padding="10sp"
+                    android:textDirection="ltr"
+                    android:theme="@style/CustomEditText" />
+
+                <net.steamcrafted.materialiconlib.MaterialIconView
+                    android:id="@+id/btn_search__selected_giftcard"
+                    android:layout_width="40sp"
+                    android:layout_height="40sp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="-5sp"
+                    android:layout_marginTop="5sp"
+                    app:materialIcon="account_search"
+                    app:materialIconColor="@color/colorButtonPrimary"
+                    android:contentDescription="@string/select_number_from_cantacts" />
+
+            </LinearLayout>
+
+            <include layout="@layout/horizontal_divider" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/payment_gateway"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimaryText"
+                android:textStyle="bold"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10sp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layoutDirection="rtl"
+                    android:padding="10sp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:layout_width="45sp"
+                        android:layout_height="45sp"
+                        android:src="@drawable/saman" />
+
+                    <RadioButton
+                        android:id="@+id/saman_gateway"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.95"
+                        android:checked="true"
+                        android:layoutDirection="ltr"
+                        android:text="@string/saman_gateway"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layoutDirection="rtl"
+                    android:padding="10sp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:layout_width="45sp"
+                        android:layout_height="45sp"
+                        android:src="@drawable/mellat" />
+
+                    <RadioButton
+                        android:id="@+id/mellat_gateway"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.95"
+                        android:layoutDirection="ltr"
+                        android:padding="10sp"
+                        android:text="@string/mellat_gateway"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layoutDirection="rtl"
+                    android:padding="10sp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:layout_width="45sp"
+                        android:layout_height="45sp"
+                        android:src="@drawable/zarinpal" />
+
+                    <RadioButton
+                        android:id="@+id/zarrinpal_gateway"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.95"
+                        android:layoutDirection="ltr"
+                        android:padding="10sp"
+                        android:text="@string/zarinpal_gateway"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/buy_selected_giftcard_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="20sp"
+                    android:background="@drawable/rounded_button"
+                    android:padding="10sp"
+                    android:text="@string/buy"
+                    android:textColor="@color/colorSecondaryText"
+                    android:textSize="28sp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
