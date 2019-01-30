@@ -52,11 +52,9 @@ import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 
 public class TopupFragment extends Fragment implements AdapterView.OnItemSelectedListener, View.OnClickListener {
 
-    private RadioButton saman, mellat, zarinpal;
-    private String selectedGateway;
     private RadioButton online_payment, offline_payment;
     private Switch awesomeSwitch;
-    private ExpandableLayout gateways_layout, creditcard_layout;
+    private ExpandableLayout creditcard_layout;
     private SharedPreferences sharedpreferences;
     private AppCompatButton buyBtn;
     private View view;
@@ -84,48 +82,20 @@ public class TopupFragment extends Fragment implements AdapterView.OnItemSelecte
 
         sharedpreferences = getContext().getSharedPreferences("KiooskData", Context.MODE_PRIVATE);
 
-        saman = (RadioButton) view.findViewById(R.id.saman_gateway);
-        mellat = (RadioButton) view.findViewById(R.id.mellat_gateway);
-        zarinpal = (RadioButton) view.findViewById(R.id.zarrinpal_gateway);
-
-        saman.setOnClickListener(v -> {
-            saman.setChecked(true);
-            mellat.setChecked(false);
-            zarinpal.setChecked(false);
-            selectedGateway = "Saman";
-        });
-
-        mellat.setOnClickListener(v -> {
-            saman.setChecked(false);
-            mellat.setChecked(true);
-            zarinpal.setChecked(false);
-            selectedGateway = "Mellat";
-        });
-
-        zarinpal.setOnClickListener(v -> {
-            saman.setChecked(false);
-            mellat.setChecked(false);
-            zarinpal.setChecked(true);
-            selectedGateway = "ZarinPal";
-        });
-
         online_payment = (RadioButton) view.findViewById(R.id.rb_pay_online);
         offline_payment = (RadioButton) view.findViewById(R.id.rb_pay_offline);
 
-        gateways_layout = (ExpandableLayout) view.findViewById(R.id.gateways_topup);
         creditcard_layout = (ExpandableLayout) view.findViewById(R.id.creditcard_layout_topup);
 
         online_payment.setOnClickListener(v -> {
             online_payment.setChecked(true);
             offline_payment.setChecked(false);
-            gateways_layout.expand();
             creditcard_layout.collapse();
         });
 
         offline_payment.setOnClickListener(v -> {
             online_payment.setChecked(false);
             offline_payment.setChecked(true);
-            gateways_layout.collapse();
             creditcard_layout.expand();
         });
 
@@ -219,7 +189,7 @@ public class TopupFragment extends Fragment implements AdapterView.OnItemSelecte
                         chargeCode += "!";
                     }
                     String chargeAmount = getAmount(spinner);
-                    onlineTopup(chargeCode, phoneNumber, chargeAmount, selectedGateway, scriptVersion);
+                    onlineTopup(chargeCode, phoneNumber, chargeAmount, "", scriptVersion);
                 } else {
                     String creditNumber = getCreditCard();
                     if (isCreditNumber(creditNumber)) {

@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:id="@+id/package_fragment_container"
-    tools:context="com.ionicframework.KiooskSharj.PackageFragment">
+    tools:context="ir.android_developing.chargeapp.PackageFragment">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"

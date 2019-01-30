@@ -44,14 +44,12 @@ import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 
 public class CardChargeFragment extends Fragment implements AdapterView.OnItemSelectedListener, View.OnClickListener {
 
-    private RadioButton saman, mellat, zarinpal;
     private ImageView mtnLogo, mciLogo, rtlLogo;
     private int selectedSize, normalSize, marginSize;
     private Spinner spinner;
     private TextView selectedOperator;
     private SharedPreferences sharedpreferences;
     private EditText editTextPhone;
-    private String selectedGateway;
     private SmoothProgressBar progressBar;
     private AppCompatButton buyBtn;
     private View view;
@@ -73,31 +71,6 @@ public class CardChargeFragment extends Fragment implements AdapterView.OnItemSe
         view = inflater.inflate(R.layout.fragment_card_charge, container, false);
 
         sharedpreferences = getContext().getSharedPreferences("KiooskData", Context.MODE_PRIVATE);
-
-        saman = (RadioButton) view.findViewById(R.id.saman_gateway);
-        mellat = (RadioButton) view.findViewById(R.id.mellat_gateway);
-        zarinpal = (RadioButton) view.findViewById(R.id.zarrinpal_gateway);
-
-        saman.setOnClickListener(v -> {
-            saman.setChecked(true);
-            mellat.setChecked(false);
-            zarinpal.setChecked(false);
-            selectedGateway = "Saman";
-        });
-
-        mellat.setOnClickListener(v -> {
-            saman.setChecked(false);
-            mellat.setChecked(true);
-            zarinpal.setChecked(false);
-            selectedGateway = "Mellat";
-        });
-
-        zarinpal.setOnClickListener(v -> {
-            saman.setChecked(false);
-            mellat.setChecked(false);
-            zarinpal.setChecked(true);
-            selectedGateway = "ZarinPal";
-        });
 
         spinner = (Spinner) view.findViewById(R.id.card_charge_amount);
         spinner.setOnItemSelectedListener(this);
@@ -286,7 +259,7 @@ public class CardChargeFragment extends Fragment implements AdapterView.OnItemSe
                 chargeCode = chargeCode.concat(getOperatorCode(selectedOperator.getText().toString()));
                 chargeCode = chargeCode.concat("-");
                 chargeCode = chargeCode.concat(getAmount(spinner));
-                buyCardCharge(chargeCode, phoneNumber, selectedGateway, scriptVersion);
+                buyCardCharge(chargeCode, phoneNumber, "", scriptVersion);
                 break;
 
             case R.id.btn_search_cardcharge:
@@ -365,9 +338,11 @@ public class CardChargeFragment extends Fragment implements AdapterView.OnItemSe
                                                 .setTextColor(getResources().getColor(R.color.colorDanger));
                                     });
                                     dialog.show();
+                                    buyBtn.setEnabled(true);
                                 }
                             } catch (JSONException | ActivityNotFoundException e) {
                                 e.printStackTrace();
+                                buyBtn.setEnabled(true);
                             }
                         }
 
@@ -385,11 +360,13 @@ public class CardChargeFragment extends Fragment implements AdapterView.OnItemSe
                                         .setTextColor(getResources().getColor(R.color.colorDanger));
                             });
                             dialog.show();
+                            buyBtn.setEnabled(true);
                         }
                     });
 
         } catch (JSONException e) {
             e.printStackTrace();
+            buyBtn.setEnabled(true);
         }
 
     }

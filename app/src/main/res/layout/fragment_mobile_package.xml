@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.ionicframework.KiooskSharj.MobilePackageFragment">
+    tools:context="ir.android_developing.chargeapp.MobilePackageFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -135,7 +135,7 @@
 
         <include layout="@layout/horizontal_divider" />
 
-        <com.ionicframework.KiooskSharj.ExpandableHeightGridView
+        <ir.android_developing.chargeapp.ExpandableHeightGridView
             android:id="@+id/grid_view_packages"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

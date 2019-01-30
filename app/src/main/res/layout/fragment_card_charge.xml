@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.ionicframework.KiooskSharj.TopupFragment">
+    tools:context="ir.android_developing.chargeapp.TopupFragment">
 
     <fr.castorflex.android.smoothprogressbar.SmoothProgressBar
         android:id="@+id/pb_card_charge"
@@ -15,7 +15,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.ionicframework.KiooskSharj.TopupFragment">
+        tools:context="ir.android_developing.chargeapp.TopupFragment">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -155,94 +155,6 @@
 
             </LinearLayout>
 
-            <include layout="@layout/horizontal_divider" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/payment_gateway"
-                android:textAlignment="center"
-                android:textColor="@color/colorPrimaryText"
-                android:textStyle="bold"
-                android:textSize="16sp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10sp"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layoutDirection="rtl"
-                    android:padding="10sp">
-
-                    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-                        android:layout_width="45sp"
-                        android:layout_height="45sp"
-                        android:src="@drawable/saman" />
-
-                    <RadioButton
-                        android:id="@+id/saman_gateway"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.95"
-                        android:checked="true"
-                        android:layoutDirection="ltr"
-                        android:text="@string/saman_gateway"
-                        android:textSize="16sp" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layoutDirection="rtl"
-                    android:padding="10sp">
-
-                    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-                        android:layout_width="45sp"
-                        android:layout_height="45sp"
-                        android:src="@drawable/mellat" />
-
-                    <RadioButton
-                        android:id="@+id/mellat_gateway"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.95"
-                        android:layoutDirection="ltr"
-                        android:padding="10sp"
-                        android:text="@string/mellat_gateway"
-                        android:textSize="16sp" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layoutDirection="rtl"
-                    android:padding="10sp">
-
-                    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-                        android:layout_width="45sp"
-                        android:layout_height="45sp"
-                        android:src="@drawable/zarinpal" />
-
-                    <RadioButton
-                        android:id="@+id/zarrinpal_gateway"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.95"
-                        android:layoutDirection="ltr"
-                        android:padding="10sp"
-                        android:text="@string/zarinpal_gateway"
-                        android:textSize="16sp" />
-
-                </LinearLayout>
-
-            </LinearLayout>
-
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -253,6 +165,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
                     android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20sp"
                     android:layout_marginBottom="20sp"
                     android:background="@drawable/rounded_button"
                     android:padding="10sp"

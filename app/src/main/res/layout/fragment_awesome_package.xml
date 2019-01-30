@@ -3,14 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.ionicframework.KiooskSharj.AwesomePackageFragment">
+    tools:context="ir.android_developing.chargeapp.AwesomePackageFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <com.ionicframework.KiooskSharj.ExpandableHeightGridView
+        <ir.android_developing.chargeapp.ExpandableHeightGridView
             android:id="@+id/grid_view_awesome_packages"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

@@ -113,7 +113,10 @@ public class MainActivity extends AppCompatActivity
                 dialog.setContentText("آیا می خواهید از برنامه خارج شوید؟");
                 dialog.setConfirmText("بله");
                 dialog.setCancelText("خیر");
-                dialog.setConfirmClickListener(sweetAlertDialog -> finish());
+                dialog.setConfirmClickListener(sweetAlertDialog -> {
+                    dialog.dismissWithAnimation();
+                    finish();
+                });
                 dialog.setCancelClickListener(SweetAlertDialog::dismissWithAnimation);
                 dialog.setOnShowListener(dialog1 -> {
                     SweetAlertDialog alertDialog = (SweetAlertDialog) dialog1;

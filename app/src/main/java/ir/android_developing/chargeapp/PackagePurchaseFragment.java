@@ -44,8 +44,6 @@ import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 
 public class PackagePurchaseFragment extends Fragment implements View.OnClickListener {
 
-    private RadioButton saman, mellat, zarinpal;
-    private String selectedGateway;
     private AppCompatButton buyBtn;
     private EditText editTextPhone;
     private SharedPreferences sharedpreferences;
@@ -91,31 +89,6 @@ public class PackagePurchaseFragment extends Fragment implements View.OnClickLis
 
         String detail = getDetail(p.getName());
         ((TextView) view.findViewById(R.id.tv_selected_pacakge_detail)).setText(detail);
-
-        saman = (RadioButton) view.findViewById(R.id.saman_gateway);
-        mellat = (RadioButton) view.findViewById(R.id.mellat_gateway);
-        zarinpal = (RadioButton) view.findViewById(R.id.zarrinpal_gateway);
-
-        saman.setOnClickListener(v -> {
-            saman.setChecked(true);
-            mellat.setChecked(false);
-            zarinpal.setChecked(false);
-            selectedGateway = "Saman";
-        });
-
-        mellat.setOnClickListener(v -> {
-            saman.setChecked(false);
-            mellat.setChecked(true);
-            zarinpal.setChecked(false);
-            selectedGateway = "Mellat";
-        });
-
-        zarinpal.setOnClickListener(v -> {
-            saman.setChecked(false);
-            mellat.setChecked(false);
-            zarinpal.setChecked(true);
-            selectedGateway = "ZarinPal";
-        });
 
         buyBtn = (AppCompatButton) view.findViewById(R.id.buy_selected_package_btn);
         Drawable cartIcon = MaterialDrawableBuilder.with(getContext())
@@ -262,7 +235,7 @@ public class PackagePurchaseFragment extends Fragment implements View.OnClickLis
                 progressBarStatus = true;
 
                 String scriptVersion = "Android";
-                buyPackage(selectedPackageId, phoneNumber, selectedGateway, scriptVersion);
+                buyPackage(selectedPackageId, phoneNumber, "", scriptVersion);
                 break;
 
             case R.id.btn_search_topup:

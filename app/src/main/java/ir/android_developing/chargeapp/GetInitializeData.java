@@ -29,7 +29,7 @@ import java.util.Iterator;
 class GetInitializeData extends AsyncTask<Void, Void, Void> {
 
     private String TAG = MainActivity.class.getSimpleName();
-    private static String url = "http://chr724.ir/services/v3/EasyCharge/initializeData";
+    private static String url = "https://chr724.ir/services/v3/EasyCharge/initializeData";
     private AppCompatActivity mActivity;
     private Boolean success = false;
     private OnEventListener mCallBack;

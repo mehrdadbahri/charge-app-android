@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.ionicframework.KiooskSharj.GiftcardPurchaseFragment">
+    tools:context="ir.android_developing.chargeapp.GiftcardPurchaseFragment">
 
     <fr.castorflex.android.smoothprogressbar.SmoothProgressBar
         android:id="@+id/pb_topup"
